@@ -6,6 +6,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { GeneroModule } from './genero/genero.module';
 import { NacionalidadModule } from './nacionalidad/nacionalidad.module';
 import { EstadoCivilModule } from './estado-civil/estado-civil.module';
+import { EstratoModule } from './estrato/estrato.module';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { EstadoCivilModule } from './estado-civil/estado-civil.module';
     GeneroModule,
     NacionalidadModule,
     EstadoCivilModule,
+    EstratoModule,
   ],
   controllers: [AppController],
   providers: [AppService],
