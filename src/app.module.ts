@@ -7,6 +7,7 @@ import { GeneroModule } from './genero/genero.module';
 import { NacionalidadModule } from './nacionalidad/nacionalidad.module';
 import { EstadoCivilModule } from './estado-civil/estado-civil.module';
 import { EstratoModule } from './estrato/estrato.module';
+import { CondicionModule } from './condicion/condicion.module';
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import { EstratoModule } from './estrato/estrato.module';
     NacionalidadModule,
     EstadoCivilModule,
     EstratoModule,
+    CondicionModule,
   ],
   controllers: [AppController],
   providers: [AppService],
