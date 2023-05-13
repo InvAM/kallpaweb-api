@@ -8,6 +8,7 @@ import { NacionalidadModule } from './nacionalidad/nacionalidad.module';
 import { EstadoCivilModule } from './estado-civil/estado-civil.module';
 import { EstratoModule } from './estrato/estrato.module';
 import { CondicionModule } from './condicion/condicion.module';
+import { CategoriaGabineteModule } from './categoria-gabinete/categoria-gabinete.module';
 
 @Module({
   imports: [
@@ -30,6 +31,7 @@ import { CondicionModule } from './condicion/condicion.module';
     EstadoCivilModule,
     EstratoModule,
     CondicionModule,
+    CategoriaGabineteModule,
   ],
   controllers: [AppController],
   providers: [AppService],
