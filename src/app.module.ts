@@ -7,7 +7,7 @@ import { GeneroModule } from './genero/genero.module';
 import { NacionalidadModule } from './nacionalidad/nacionalidad.module';
 import { EstadoCivilModule } from './estado-civil/estado-civil.module';
 import { EstratoModule } from './estrato/estrato.module';
-import { CategoriaGabineteModule } from './categoria-gabinete/categoria-gabinete.module';
+import { CondicionModule } from './condicion/condicion.module';
 
 @Module({
   imports: [
@@ -29,7 +29,7 @@ import { CategoriaGabineteModule } from './categoria-gabinete/categoria-gabinete
     NacionalidadModule,
     EstadoCivilModule,
     EstratoModule,
-    CategoriaGabineteModule,
+    CondicionModule,
   ],
   controllers: [AppController],
   providers: [AppService],
