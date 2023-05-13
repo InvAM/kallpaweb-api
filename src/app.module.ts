@@ -35,3 +35,4 @@ import { CategoriaGabineteModule } from './categoria-gabinete/categoria-gabinete
   providers: [AppService],
 })
 export class AppModule {}
+
