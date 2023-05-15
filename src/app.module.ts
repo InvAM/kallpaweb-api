@@ -10,15 +10,16 @@ import { EstratoModule } from './estrato/estrato.module';
 import { CategoriaGabineteModule } from './categoria-gabinete/categoria-gabinete.module';
 import { CondicionModule } from './condicion/condicion.module';
 import { DistritoModule } from './distrito/distrito.module';
+import { EtapaModule } from './etapa/etapa.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'mssql',
-      host: 'JYF27',
+      host: 'DESKTOP-G8P3KD4',
       port: 1433,
-      username: 'JYF27',
-      password: '7131',
+      username: 'Carlos',
+      password: '1234',
       database: 'Kallpa',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
@@ -34,6 +35,7 @@ import { DistritoModule } from './distrito/distrito.module';
     CondicionModule,
     CategoriaGabineteModule,
     DistritoModule,
+    EtapaModule,
   ],
   controllers: [AppController],
   providers: [AppService],
