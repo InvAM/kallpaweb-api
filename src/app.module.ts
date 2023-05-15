@@ -9,6 +9,8 @@ import { EstadoCivilModule } from './estado-civil/estado-civil.module';
 import { EstratoModule } from './estrato/estrato.module';
 import { CategoriaGabineteModule } from './categoria-gabinete/categoria-gabinete.module';
 import { CondicionModule } from './condicion/condicion.module';
+import { DistritoModule } from './distrito/distrito.module';
+import { EtapaModule } from './etapa/etapa.module';
 
 @Module({
   imports: [
@@ -32,6 +34,8 @@ import { CondicionModule } from './condicion/condicion.module';
     EstratoModule,
     CondicionModule,
     CategoriaGabineteModule,
+    DistritoModule,
+    EtapaModule,
   ],
   controllers: [AppController],
   providers: [AppService],
