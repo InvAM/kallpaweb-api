@@ -11,6 +11,9 @@ import { CategoriaGabineteModule } from './categoria-gabinete/categoria-gabinete
 import { CondicionModule } from './condicion/condicion.module';
 import { DistritoModule } from './distrito/distrito.module';
 import { EtapaModule } from './etapa/etapa.module';
+import { TipoPredioModule } from './tipo-predio/tipo-predio.module';
+import { CategoriaEmpleadoModule } from './categoria-empleado/categoria-empleado.module';
+import { TipoInstalacionModule } from './tipo-instalacion/tipo-instalacion.module';
 
 @Module({
   imports: [
@@ -36,6 +39,9 @@ import { EtapaModule } from './etapa/etapa.module';
     CategoriaGabineteModule,
     DistritoModule,
     EtapaModule,
+    TipoPredioModule,
+    CategoriaEmpleadoModule,
+    TipoInstalacionModule,
   ],
   controllers: [AppController],
   providers: [AppService],
