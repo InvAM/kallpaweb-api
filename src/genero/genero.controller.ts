@@ -1,6 +1,7 @@
-import { Body, Controller, Post, Get } from '@nestjs/common';
+import { Body, Controller, Post, Get, Param } from '@nestjs/common';
 import { CreateGeneroDto } from './dto/create-genero.dto';
 import { GeneroService } from './genero.service';
+import { Genero } from './genero.entity';
 
 @Controller('genero')
 export class GeneroController {
@@ -14,5 +15,10 @@ export class GeneroController {
   @Post()
   createGenero(@Body() newGen: CreateGeneroDto) {
     return this.generoService.createGenero(newGen);
+  }
+
+  @Get(':IDGenero')
+  getGeneroOne(@Param('IDGenero') IDGenero: number): Promise<Genero> {
+    return this.generoService.getGeneroOne(IDGenero);
   }
 }

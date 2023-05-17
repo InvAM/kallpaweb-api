@@ -18,4 +18,12 @@ export class DistritoService {
   getDistrito() {
     return this.distritoRepository.find();
   }
+
+  getDistritoOne(IDDistrito: number) {
+    return this.distritoRepository.findOne({
+      where: {
+        IDDistrito,
+      },
+    });
+  }
 }

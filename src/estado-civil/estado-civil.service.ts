@@ -19,4 +19,12 @@ export class EstadoCivilService {
   getEstadoCivil() {
     return this.estadoCivilRepository.find();
   }
+
+  getEstadoCivilOne(IDEstadoCivil: number) {
+    return this.estadoCivilRepository.findOne({
+      where: {
+        IDEstadoCivil,
+      },
+    });
+  }
 }

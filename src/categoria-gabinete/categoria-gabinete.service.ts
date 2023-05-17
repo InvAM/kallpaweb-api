@@ -18,4 +18,12 @@ export class CategoriaGabineteService {
   getCategoriaGabinete() {
     return this.categoriaGabineteRepository.find();
   }
+
+  getCategoriaGabineteOne(IDGabineteCategoria: number) {
+    return this.categoriaGabineteRepository.findOne({
+      where: {
+        IDGabineteCategoria,
+      },
+    });
+  }
 }

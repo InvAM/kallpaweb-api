@@ -18,4 +18,12 @@ export class EstratoService {
   getEstrato() {
     return this.estratoRepository.find();
   }
+
+  getEstratoOne(IDEstrato: number) {
+    return this.estratoRepository.findOne({
+      where: {
+        IDEstrato,
+      },
+    });
+  }
 }

@@ -19,4 +19,12 @@ export class TipoInstalacionService {
   getTipoInstalacion() {
     return this.tipoInstalcionRepository.find();
   }
+
+  getTipoInstalacionOne(IDTipoInst: number) {
+    return this.tipoInstalcionRepository.findOne({
+      where: {
+        IDTipoInst,
+      },
+    });
+  }
 }

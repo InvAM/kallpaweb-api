@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryColumn } from 'typeorm';
+import { Usuario } from 'src/usuario/usuario.entity';
+import { Column, Entity, OneToMany, PrimaryColumn } from 'typeorm';
 
 @Entity({ name: 'Nacionalidad' })
 export class Nacionalidad {
@@ -7,4 +8,7 @@ export class Nacionalidad {
 
   @Column()
   Descripcion_NA: string;
+
+  @OneToMany(() => Usuario, (Usuario) => Usuario.nacionalidad)
+  usuario: [Usuario];
 }

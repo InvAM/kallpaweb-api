@@ -18,4 +18,12 @@ export class TipoPredioService {
   getTipoPredio() {
     return this.tipoPredioRepository.find();
   }
+
+  getTipoPredioOne(IDPredio: number) {
+    return this.tipoPredioRepository.findOne({
+      where: {
+        IDPredio,
+      },
+    });
+  }
 }

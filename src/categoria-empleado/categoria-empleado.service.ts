@@ -19,4 +19,12 @@ export class CategoriaEmpleadoService {
   getCategoriaEmpleado() {
     return this.categoriaEmpleadoRepository.find();
   }
+
+  getCategoriaEmpleadoOne(IDCategoria: number) {
+    return this.categoriaEmpleadoRepository.findOne({
+      where: {
+        IDCategoria: IDCategoria,
+      },
+    });
+  }
 }

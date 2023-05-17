@@ -18,4 +18,12 @@ export class CondicionService {
   getCondicion() {
     return this.condicionRepository.find();
   }
+
+  getCondicionOne(IDCondicion: number) {
+    return this.condicionRepository.findOne({
+      where: {
+        IDCondicion,
+      },
+    });
+  }
 }

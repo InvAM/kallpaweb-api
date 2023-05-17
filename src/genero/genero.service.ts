@@ -18,4 +18,12 @@ export class GeneroService {
   getGenero() {
     return this.generoRepository.find();
   }
+
+  getGeneroOne(IDGenero: number) {
+    return this.generoRepository.findOne({
+      where: {
+        IDGenero,
+      },
+    });
+  }
 }
