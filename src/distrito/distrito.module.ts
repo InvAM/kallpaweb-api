@@ -8,5 +8,6 @@ import { Distrito } from './distrito.entity';
   imports: [TypeOrmModule.forFeature([Distrito])],
   controllers: [DistritoController],
   providers: [DistritoService],
+  exports: [DistritoService],
 })
 export class DistritoModule {}

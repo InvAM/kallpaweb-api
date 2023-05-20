@@ -14,7 +14,6 @@ import { TipoPredioModule } from './tipo-predio/tipo-predio.module';
 import { CategoriaEmpleadoModule } from './categoria-empleado/categoria-empleado.module';
 import { TipoInstalacionModule } from './tipo-instalacion/tipo-instalacion.module';
 import { MaterialesModule } from './materiales/materiales.module';
-import { UsuarioModule } from './usuario/usuario.module';
 import { DomicilioModule } from './domicilio/domicilio.module';
 
 @Module({
@@ -44,7 +43,6 @@ import { DomicilioModule } from './domicilio/domicilio.module';
     CategoriaEmpleadoModule,
     TipoInstalacionModule,
     MaterialesModule,
-    UsuarioModule,
     DomicilioModule,
   ],
   controllers: [AppController],

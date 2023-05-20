@@ -8,5 +8,6 @@ import { TipoPredio } from './tipo-predio.entity';
   imports: [TypeOrmModule.forFeature([TipoPredio])],
   controllers: [TipoPredioController],
   providers: [TipoPredioService],
+  exports: [TipoPredioService],
 })
 export class TipoPredioModule {}
