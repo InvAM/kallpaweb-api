@@ -1,14 +1,14 @@
 import { Domicilio } from 'src/domicilio/domicilio.entity';
 import { Column, Entity, OneToMany, PrimaryColumn } from 'typeorm';
 
-@Entity({ name: 'Estrato' })
-export class Estrato {
+@Entity({ name: 'TipoPredio' })
+export class TipoPredio {
   @PrimaryColumn()
-  IDEstrato: number;
+  IDPredio: number;
 
   @Column()
-  Descripcion_Estrato: string;
+  Descripcion_Pre: string;
 
-  @OneToMany(() => Domicilio, (domicilio) => domicilio.estrato)
+  @OneToMany(() => Domicilio, (domicilio) => domicilio.tipopredio)
   domicilio: Domicilio[];
 }

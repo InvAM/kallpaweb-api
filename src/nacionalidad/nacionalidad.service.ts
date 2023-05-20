@@ -19,4 +19,12 @@ export class NacionalidadService {
   getNacionalidad() {
     return this.nacionalidadRepository.find();
   }
+
+  getNacionalidadOne(IDNacionalidad: number) {
+    return this.nacionalidadRepository.findOne({
+      where: {
+        IDNacionalidad,
+      },
+    });
+  }
 }

@@ -1,10 +1,10 @@
-import {Column, Entity, PrimaryColumn} from "typeorm";
+import { Column, Entity, PrimaryColumn } from 'typeorm';
 
-@Entity({name:' Etapa'})
+@Entity({ name: 'Etapa' })
 export class Etapa {
-    @PrimaryColumn()
-    IDEtapa: number;
+  @PrimaryColumn()
+  IDEtapa: number;
 
-    @Column()
-    Descripcion_Et: string;
+  @Column()
+  Descripcion_Et: string;
 }

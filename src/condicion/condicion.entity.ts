@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryColumn } from 'typeorm';
+import { Domicilio } from 'src/domicilio/domicilio.entity';
+import { Column, Entity, JoinColumn, OneToMany, PrimaryColumn } from 'typeorm';
 
 @Entity({ name: 'Condicion' })
 export class Condicion {
@@ -7,4 +8,7 @@ export class Condicion {
 
   @Column()
   Descripcion_Co: string;
+
+  @OneToMany(() => Domicilio, (domicilio) => domicilio.condicion)
+  domicilio: Domicilio[];
 }

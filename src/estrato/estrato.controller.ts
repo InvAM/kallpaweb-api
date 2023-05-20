@@ -1,6 +1,7 @@
-import { Controller, Body, Get, Post } from '@nestjs/common';
+import { Controller, Body, Get, Post, Param } from '@nestjs/common';
 import { CreateEstratoDto } from './dto/estrato.dto';
 import { EstratoService } from './estrato.service';
+import { Estrato } from './estrato.entity';
 
 @Controller('estrato')
 export class EstratoController {
@@ -14,5 +15,10 @@ export class EstratoController {
   @Post()
   createEstrato(@Body() newEst: CreateEstratoDto) {
     return this.estratoService.createEstrato(newEst);
+  }
+
+  @Get(':IDEstrato')
+  getEstratoOne(@Param('IDEstrato') IDEstrato: number): Promise<Estrato> {
+    return this.estratoService.getEstratoOne(IDEstrato);
   }
 }

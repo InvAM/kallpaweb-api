@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryColumn } from 'typeorm';
+import { Domicilio } from 'src/domicilio/domicilio.entity';
+import { Column, Entity, OneToMany, PrimaryColumn } from 'typeorm';
 
 @Entity({ name: 'Distrito' })
 export class Distrito {
@@ -7,4 +8,7 @@ export class Distrito {
 
   @Column()
   Nombre_Di: string;
+
+  @OneToMany(() => Domicilio, (domicilio) => domicilio.distrito)
+  domicilio: Domicilio[];
 }

@@ -1,7 +1,8 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param } from '@nestjs/common';
 import { CreateCondicionDto } from './dto/create-condicion.dto';
 import { CondicionService } from './condicion.service';
 import { GeneroService } from 'src/genero/genero.service';
+import { Condicion } from './condicion.entity';
 
 @Controller('condicion')
 export class CondicionController {
@@ -15,5 +16,12 @@ export class CondicionController {
   @Post()
   createCondicion(@Body() newCon: CreateCondicionDto) {
     return this.condicionService.createCondicion(newCon);
+  }
+
+  @Get(':IDCondicion')
+  getCondicionOne(
+    @Param('IDCondicion') IDCondicion: number,
+  ): Promise<Condicion> {
+    return this.condicionService.getCondicionOne(IDCondicion);
   }
 }

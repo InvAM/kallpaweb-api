@@ -8,5 +8,6 @@ import { Condicion } from './condicion.entity';
   imports: [TypeOrmModule.forFeature([Condicion])],
   providers: [CondicionService],
   controllers: [CondicionController],
+  exports: [CondicionService],
 })
 export class CondicionModule {}

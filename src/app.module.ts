@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { GeneroModule } from './genero/genero.module';
 import { NacionalidadModule } from './nacionalidad/nacionalidad.module';
@@ -11,6 +10,11 @@ import { CategoriaGabineteModule } from './categoria-gabinete/categoria-gabinete
 import { CondicionModule } from './condicion/condicion.module';
 import { DistritoModule } from './distrito/distrito.module';
 import { EtapaModule } from './etapa/etapa.module';
+import { TipoPredioModule } from './tipo-predio/tipo-predio.module';
+import { CategoriaEmpleadoModule } from './categoria-empleado/categoria-empleado.module';
+import { TipoInstalacionModule } from './tipo-instalacion/tipo-instalacion.module';
+import { MaterialesModule } from './materiales/materiales.module';
+import { DomicilioModule } from './domicilio/domicilio.module';
 
 @Module({
   imports: [
@@ -27,7 +31,6 @@ import { EtapaModule } from './etapa/etapa.module';
         trustServerCertificate: true,
       },
     }),
-    UsersModule,
     GeneroModule,
     NacionalidadModule,
     EstadoCivilModule,
@@ -36,6 +39,11 @@ import { EtapaModule } from './etapa/etapa.module';
     CategoriaGabineteModule,
     DistritoModule,
     EtapaModule,
+    TipoPredioModule,
+    CategoriaEmpleadoModule,
+    TipoInstalacionModule,
+    MaterialesModule,
+    DomicilioModule,
   ],
   controllers: [AppController],
   providers: [AppService],

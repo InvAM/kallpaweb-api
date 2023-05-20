@@ -8,5 +8,6 @@ import { Estrato } from './estrato.entity';
   imports: [TypeOrmModule.forFeature([Estrato])],
   providers: [EstratoService],
   controllers: [EstratoController],
+  exports: [EstratoService],
 })
 export class EstratoModule {}
