@@ -15,15 +15,16 @@ import { CategoriaEmpleadoModule } from './categoria-empleado/categoria-empleado
 import { TipoInstalacionModule } from './tipo-instalacion/tipo-instalacion.module';
 import { MaterialesModule } from './materiales/materiales.module';
 import { DomicilioModule } from './domicilio/domicilio.module';
+import { UsuarioModule } from './usuario/usuario.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'mssql',
-      host: 'JYF27',
+      host: 'DESKTOP-GD3MLRT',
       port: 1433,
-      username: 'JYF27',
-      password: '7131',
+      username: 'MEL',
+      password: '713419582003',
       database: 'Kallpa',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
@@ -44,6 +45,7 @@ import { DomicilioModule } from './domicilio/domicilio.module';
     TipoInstalacionModule,
     MaterialesModule,
     DomicilioModule,
+    UsuarioModule,
   ],
   controllers: [AppController],
   providers: [AppService],

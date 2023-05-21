@@ -18,5 +18,6 @@ import { TipoPredioModule } from 'src/tipo-predio/tipo-predio.module';
   ],
   controllers: [DomicilioController],
   providers: [DomicilioService],
+  exports: [DomicilioService],
 })
 export class DomicilioModule {}

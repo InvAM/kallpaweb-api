@@ -55,4 +55,12 @@ export class DomicilioService {
     });
     //Todo ese fragmento va dentro de find (aun en prueba)
   }
+
+  getDomicilioOne(IDDomicilio: number) {
+    return this.domicilioRepository.findOne({
+      where: {
+        IDDomicilio,
+      },
+    });
+  }
 }
