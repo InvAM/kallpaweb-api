@@ -40,7 +40,7 @@ export class DomicilioService {
       !distritoFound
     ) {
       return new HttpException(
-        'Faltan datos (IDCondicion, IDPredio, IDEstrato, IDDistrito) ',
+        'Faltan datos (IDCondicion, IDPredio, IDEstrato, IDDistrito)',
         HttpStatus.NOT_FOUND,
       );
     }
@@ -50,6 +50,9 @@ export class DomicilioService {
   }
 
   getDomicilio() {
-    return this.domicilioRepository.find();
+    return this.domicilioRepository.find({
+      relations: ['condicion', 'estrato', 'tipopredio', 'distrito'],
+    });
+    //Todo ese fragmento va dentro de find (aun en prueba)
   }
 }
