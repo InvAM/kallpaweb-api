@@ -21,10 +21,10 @@ import { UsuarioModule } from './usuario/usuario.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mssql',
-      host: 'DESKTOP-GD3MLRT',
+      host: 'JYF27',
       port: 1433,
-      username: 'MEL',
-      password: '713419582003',
+      username: 'JYF27',
+      password: '7131',
       database: 'Kallpa',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,

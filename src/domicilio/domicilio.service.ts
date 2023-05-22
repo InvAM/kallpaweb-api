@@ -59,7 +59,7 @@ export class DomicilioService {
   getDomicilioOne(IDDomicilio: number) {
     return this.domicilioRepository.findOne({
       where: {
-        IDDomicilio,
+        IDDomicilio: IDDomicilio,
       },
     });
   }

@@ -10,5 +10,5 @@ export class Genero {
   Descripcion_G: string;
 
   @OneToMany(() => Usuario, (Usuario) => Usuario.genero)
-  usuario: [Usuario];
+  usuario: Usuario[];
 }

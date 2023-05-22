@@ -9,5 +9,5 @@ export class EstadoCivil {
   Descripcion_Es: string;
 
   @OneToMany(() => Usuario, (Usuario) => Usuario.estadocivil)
-  usuario: [Usuario];
+  usuario: Usuario[];
 }

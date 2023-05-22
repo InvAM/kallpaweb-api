@@ -3,7 +3,14 @@ import { Distrito } from 'src/distrito/distrito.entity';
 import { Estrato } from 'src/estrato/estrato.entity';
 import { TipoPredio } from 'src/tipo-predio/tipo-predio.entity';
 import { Usuario } from 'src/usuario/usuario.entity';
-import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  OneToOne,
+  PrimaryColumn,
+} from 'typeorm';
 
 @Entity({ name: 'Domicilio' })
 export class Domicilio {
@@ -53,6 +60,6 @@ export class Domicilio {
   @JoinColumn({ name: 'IDDistrito' })
   distrito: Distrito;
 
-  @OneToOne(() => Usuario, (Usuario) => Usuario.domicilio)
-  usuario: [Usuario];
+  @OneToOne(() => Usuario, (usuario) => usuario.domicilio)
+  usuario: Usuario;
 }

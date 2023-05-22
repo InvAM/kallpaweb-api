@@ -10,5 +10,5 @@ export class Nacionalidad {
   Descripcion_NA: string;
 
   @OneToMany(() => Usuario, (Usuario) => Usuario.nacionalidad)
-  usuario: [Usuario];
+  usuario: Usuario[];
 }
