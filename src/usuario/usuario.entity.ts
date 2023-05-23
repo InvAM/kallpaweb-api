@@ -10,6 +10,7 @@ import {
   OneToOne,
   PrimaryColumn,
 } from 'typeorm';
+import { Contrato } from 'src/contrato/contrato.entity';
 
 @Entity({ name: 'Usuario' })
 export class Usuario {
@@ -55,4 +56,7 @@ export class Usuario {
   @OneToOne(() => Domicilio, (domicilio) => domicilio.usuario)
   @JoinColumn({ name: 'IDDomicilio' })
   domicilio: Domicilio;
+
+  @OneToOne(() => Contrato, (contrato)=> contrato.usuario)
+  contrato: Contrato[];
 }
