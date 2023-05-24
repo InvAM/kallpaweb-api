@@ -16,8 +16,7 @@ import { TipoInstalacionModule } from './tipo-instalacion/tipo-instalacion.modul
 import { MaterialesModule } from './materiales/materiales.module';
 import { DomicilioModule } from './domicilio/domicilio.module';
 import { UsuarioModule } from './usuario/usuario.module';
-import { ContratoController } from './contrato/contrato.controller';
-import { ContratoModule } from './contrato/contrato.module';
+import { EmpleadoModule } from './empleado/empleado.module';
 
 @Module({
   imports: [
@@ -48,7 +47,7 @@ import { ContratoModule } from './contrato/contrato.module';
     MaterialesModule,
     DomicilioModule,
     UsuarioModule,
-    ContratoModule,
+    EmpleadoModule,
   ],
   controllers: [AppController, ContratoController],
   providers: [AppService],

@@ -46,17 +46,17 @@ export class Usuario {
   @Column()
   IDEstadoCivil: number;
 
-  @Column()
-  IDDomicilio: number;
-
   @ManyToOne(() => EstadoCivil, (estadocivil) => estadocivil.usuario)
   @JoinColumn({ name: 'IDEstadoCivil' })
   estadocivil: EstadoCivil;
+
+  @Column()
+  IDDomicilio: number;
 
   @OneToOne(() => Domicilio, (domicilio) => domicilio.usuario)
   @JoinColumn({ name: 'IDDomicilio' })
   domicilio: Domicilio;
 
   @OneToOne(() => Contrato, (contrato)=> contrato.usuario)
-  contrato: Contrato[];
+  contrato: Contrato;
 }

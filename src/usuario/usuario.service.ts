@@ -52,4 +52,12 @@ export class UsuarioService {
     getUsuario() {
         return this.usuarioRepository.find();
     }
+
+    getUsuarioOne(DNI_Usu: number) {
+        return this.usuarioRepository.findOne({
+          where: {
+            DNI_Usu,
+          },
+        });
+      }
 }

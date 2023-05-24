@@ -1,4 +1,5 @@
 import { Categoria_Gabinete } from "src/categoria-gabinete/categoria-gabinete.entity";
+import { Empleado } from "src/empleado/empleado.entity";
 import { TipoInstalacion } from "src/tipo-instalacion/tipo-instalacion.entity";
 import { Usuario } from "src/usuario/usuario.entity";
 import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryColumn } from "typeorm";
@@ -38,11 +39,16 @@ export class Contrato{
     DNI_Usu: number;
 
     @OneToOne(()=>Usuario, (usuario)=>usuario.contrato)
-    @JoinColumn({name: 'DNI_Usuario'})
-    usuario: Usuario[];
+    @JoinColumn({name: 'DNI_Usu'})
+    usuario: Usuario;
 
     @Column()
-    DNI_Emp: number;
+    DNI_Em: number;
+
+    @ManyToOne(()=>Empleado, (empleado)=>empleado)
+    @JoinColumn({name: 'DNI_Em'})
+    empleado: Empleado[];
+
 
 
 
