@@ -14,9 +14,10 @@ import { ContratoController } from './contrato.controller';
     CategoriaGabineteModule,
     TipoInstalacionModule,
     UsuarioModule,
-    EmpleadoModule
+    EmpleadoModule,
   ],
   controllers: [ContratoController],
-  providers: [ContratoService]
+  providers: [ContratoService],
+  exports: [ContratoService],
 })
 export class ContratoModule {}

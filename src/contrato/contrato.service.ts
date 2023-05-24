@@ -10,47 +10,56 @@ import { CreateContratoDto } from './dto/create-contrato.dto';
 
 @Injectable()
 export class ContratoService {
-   constructor(
+  constructor(
     @InjectRepository(Contrato)
     private contratoRepository: Repository<Contrato>,
     private categoriagabineteService: CategoriaGabineteService,
     private tipoinstalacionService: TipoInstalacionService,
     private usuarioService: UsuarioService,
     private empleadoService: EmpleadoService,
-   ){}
+  ) {}
 
-   async createContrato(contrato: CreateContratoDto){
-    const categoriagabineteFound = await this.categoriagabineteService.getCategoriaGabineteOne(
+  async createContrato(contrato: CreateContratoDto) {
+    const categoriagabineteFound =
+      await this.categoriagabineteService.getCategoriaGabineteOne(
         contrato.IDGabineteCategoria,
-    );
-    const tipoinstalacionFound = await this.tipoinstalacionService.getTipoInstalacionOne(
+      );
+    const tipoinstalacionFound =
+      await this.tipoinstalacionService.getTipoInstalacionOne(
         contrato.IDTipoInst,
-    );
+      );
     const usuarioFound = await this.usuarioService.getUsuarioOne(
-        contrato.DNI_Usu,
+      contrato.DNI_Usu,
     );
     const empleadoFound = await this.empleadoService.getEmpleadoOne(
-        contrato.DNI_Em,
+      contrato.DNI_Em,
     );
 
-    if(
-        !categoriagabineteFound &&
-        !tipoinstalacionFound &&
-        !usuarioFound &&
-        !empleadoFound
+    if (
+      !categoriagabineteFound &&
+      !tipoinstalacionFound &&
+      !usuarioFound &&
+      !empleadoFound
     ) {
-        return new HttpException(
-            'Faltan datos (IDGabineteCategoria,IDTipoInst,DNI_Usu,DNI_Em)',
-            HttpStatus.NOT_FOUND,
-        );
+      return new HttpException(
+        'Faltan datos (IDGabineteCategoria,IDTipoInst,DNI_Usu,DNI_Em)',
+        HttpStatus.NOT_FOUND,
+      );
     }
-    
+
     const newContrato = this.contratoRepository.create(contrato);
     return this.contratoRepository.save(newContrato);
-   }
+  }
 
-   getContrato(){
+  getContrato() {
     return this.contratoRepository.find();
-   }
+  }
 
+  getContratoOne(IDContrato: number) {
+    return this.contratoRepository.findOne({
+      where: {
+        IDContrato: IDContrato,
+      },
+    });
+  }
 }

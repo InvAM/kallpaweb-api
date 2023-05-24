@@ -1,6 +1,14 @@
 import { CategoriaEmpleado } from 'src/categoria-empleado/categoria-empleado.entity';
 import { Contrato } from 'src/contrato/contrato.entity';
-import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryColumn } from 'typeorm';
+import { EtapaContrato } from 'src/etapa-contrato/etapa-contrato.entity';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  OneToMany,
+  PrimaryColumn,
+} from 'typeorm';
 
 @Entity({ name: 'Empleado' })
 export class Empleado {
@@ -19,11 +27,16 @@ export class Empleado {
   @Column()
   IDCategoria: number;
 
-  @ManyToOne(() => CategoriaEmpleado,(categoriaempleado) => categoriaempleado.empleado)
+  @ManyToOne(
+    () => CategoriaEmpleado,
+    (categoriaempleado) => categoriaempleado.empleado,
+  )
   @JoinColumn({ name: 'IDCategoria' })
   categoriaempleado: CategoriaEmpleado;
 
-  @OneToMany(()=> Contrato, (contrato) =>contrato.empleado)
+  @OneToMany(() => Contrato, (contrato) => contrato.empleado)
   contrato: Contrato[];
 
+  @OneToMany(() => EtapaContrato, (etapaContrato) => etapaContrato.empleado)
+  etapaContrato: EtapaContrato[];
 }
