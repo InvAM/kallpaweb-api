@@ -1,5 +1,6 @@
 import { CategoriaEmpleado } from 'src/categoria-empleado/categoria-empleado.entity';
 import { Contrato } from 'src/contrato/contrato.entity';
+import { CredencialesEmpleado } from 'src/credenciales-empleado/credenciales-empleado.entity';
 import { EtapaContrato } from 'src/etapa-contrato/etapa-contrato.entity';
 import {
   Column,
@@ -7,6 +8,7 @@ import {
   JoinColumn,
   ManyToOne,
   OneToMany,
+  OneToOne,
   PrimaryColumn,
 } from 'typeorm';
 
@@ -39,4 +41,10 @@ export class Empleado {
 
   @OneToMany(() => EtapaContrato, (etapaContrato) => etapaContrato.empleado)
   etapaContrato: EtapaContrato[];
+
+  @OneToOne(
+    () => CredencialesEmpleado,
+    (credencialesempleado) => credencialesempleado.empleado,
+  )
+  credencialesempleado: CredencialesEmpleado;
 }

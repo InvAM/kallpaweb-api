@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryColumn } from 'typeorm';
+import { DetalleEtapaMaterial } from 'src/detalle-etapa-material/detalle-etapa-material.entity';
+import { Column, Entity, OneToMany, PrimaryColumn } from 'typeorm';
 
 @Entity({ name: 'Materiales' })
 export class Materiales {
@@ -13,4 +14,10 @@ export class Materiales {
 
   @Column()
   Stock_Ma: number;
+
+  @OneToMany(
+    () => DetalleEtapaMaterial,
+    (detalleEtapaMaterial) => detalleEtapaMaterial.materiales,
+  )
+  detalleEtapaMaterial: DetalleEtapaMaterial[];
 }

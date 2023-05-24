@@ -52,7 +52,14 @@ export class ContratoService {
   }
 
   getContrato() {
-    return this.contratoRepository.find();
+    return this.contratoRepository.find({
+      relations: [
+        'categoriagabinete',
+        'tipoinstalacion',
+        'usuario',
+        'empleado',
+      ],
+    });
   }
 
   getContratoOne(IDContrato: number) {

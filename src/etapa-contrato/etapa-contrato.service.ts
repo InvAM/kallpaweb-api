@@ -41,7 +41,9 @@ export class EtapaContratoService {
   }
 
   getEtapaContrato() {
-    return this.etapaContratoRepository.find({});
+    return this.etapaContratoRepository.find({
+      relations: ['contrato', 'etapa', 'empleado'],
+    });
   }
 
   getEtapaContratoOne(IDEtapa: number, IDContrato: number) {

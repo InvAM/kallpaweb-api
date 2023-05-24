@@ -31,6 +31,9 @@ export class Contrato {
   PuntoInstalacion_Con: number;
 
   @Column()
+  estado: string;
+
+  @Column()
   IDGabineteCategoria: number;
 
   @ManyToOne(
@@ -60,7 +63,7 @@ export class Contrato {
   @Column()
   DNI_Em: number;
 
-  @ManyToOne(() => Empleado, (empleado) => empleado)
+  @ManyToOne(() => Empleado, (empleado) => empleado.contrato)
   @JoinColumn({ name: 'DNI_Em' })
   empleado: Empleado[];
 
