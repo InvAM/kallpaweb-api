@@ -54,10 +54,10 @@ export class Contrato {
   tipoinstalacion: TipoInstalacion[];
 
   @Column()
-  DNI_Usu: number;
+  DNI_cli: number;
 
   @OneToOne(() => Usuario, (usuario) => usuario.contrato)
-  @JoinColumn({ name: 'DNI_Usu' })
+  @JoinColumn({ name: 'DNI_cli' })
   usuario: Usuario;
 
   @Column()

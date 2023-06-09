@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post, Param } from '@nestjs/common';
 import { CredencialesEmpleadoService } from './credenciales-empleado.service';
 import { CreateCredencialesEmpleadoDto } from './dto/credenciales-empleado.dto';
 
@@ -20,5 +20,18 @@ export class CredencialesEmpleadoController {
   @Get()
   getCredencialesEmpleado() {
     return this.credencialesEmpleadoService.getCredencialesEmpleado();
+  }
+
+  @Post('validar')
+  validarEmpleado(
+    @Body('DNI_Em') DNI_Em: number,
+    @Body('nombreusuario') nombreusuario: string,
+    @Body('contraseña') contraseña: string,
+  ) {
+    return this.credencialesEmpleadoService.validarEmpleado(
+      DNI_Em,
+      nombreusuario,
+      contraseña,
+    );
   }
 }

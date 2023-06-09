@@ -53,10 +53,10 @@ export class UsuarioService {
     });
   }
 
-  getUsuarioOne(DNI_Usu: number) {
+  getUsuarioOne(DNI_cli: number) {
     return this.usuarioRepository.findOne({
       where: {
-        DNI_Usu,
+        DNI_cli,
       },
     });
   }

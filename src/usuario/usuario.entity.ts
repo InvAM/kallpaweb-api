@@ -12,22 +12,22 @@ import {
 } from 'typeorm';
 import { Contrato } from 'src/contrato/contrato.entity';
 
-@Entity({ name: 'Usuario' })
+@Entity({ name: 'Cliente' })
 export class Usuario {
   @PrimaryColumn()
-  DNI_Usu: number;
+  DNI_cli: number;
 
   @Column()
-  Nombre_Usu: string;
+  Nombre_cli: string;
 
   @Column()
-  Apellido_usu: string;
+  Apellido_cli: string;
 
   @Column()
-  Celular_Usu: number;
+  Celular_cli: number;
 
   @Column()
-  FechaNacimiento_Usu: Date;
+  FechaNacimiento_cli: Date;
 
   @Column()
   IDGenero: number;
@@ -57,6 +57,6 @@ export class Usuario {
   @JoinColumn({ name: 'IDDomicilio' })
   domicilio: Domicilio;
 
-  @OneToOne(() => Contrato, (contrato)=> contrato.usuario)
+  @OneToOne(() => Contrato, (contrato) => contrato.usuario)
   contrato: Contrato;
 }
