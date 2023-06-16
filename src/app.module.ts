@@ -17,6 +17,10 @@ import { MaterialesModule } from './materiales/materiales.module';
 import { DomicilioModule } from './domicilio/domicilio.module';
 import { UsuarioModule } from './usuario/usuario.module';
 import { EmpleadoModule } from './empleado/empleado.module';
+import { ContratoModule } from './contrato/contrato.module';
+import { EtapaContratoModule } from './etapa-contrato/etapa-contrato.module';
+import { DetalleEtapaMaterialModule } from './detalle-etapa-material/detalle-etapa-material.module';
+import { CredencialesEmpleadoModule } from './credenciales-empleado/credenciales-empleado.module';
 
 @Module({
   imports: [
@@ -48,6 +52,10 @@ import { EmpleadoModule } from './empleado/empleado.module';
     DomicilioModule,
     UsuarioModule,
     EmpleadoModule,
+    ContratoModule,
+    EtapaContratoModule,
+    DetalleEtapaMaterialModule,
+    CredencialesEmpleadoModule,
   ],
   controllers: [AppController],
   providers: [AppService],

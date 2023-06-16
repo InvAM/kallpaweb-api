@@ -28,6 +28,16 @@ export class EmpleadoService {
   }
 
   getEmpleado() {
-    return this.empleadoRepository.find();
+    return this.empleadoRepository.find({
+      relations: ['categoriaempleado'],
+    });
+  }
+
+  getEmpleadoOne(DNI_Em: number) {
+    return this.empleadoRepository.findOne({
+      where: {
+        DNI_Em,
+      },
+    });
   }
 }

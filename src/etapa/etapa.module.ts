@@ -7,6 +7,7 @@ import { Etapa } from './etapa.entity';
 @Module({
   imports: [TypeOrmModule.forFeature([Etapa])],
   controllers: [EtapaController],
-  providers: [EtapaService]
+  providers: [EtapaService],
+  exports: [EtapaService],
 })
 export class EtapaModule {}

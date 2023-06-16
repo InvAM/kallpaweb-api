@@ -18,5 +18,6 @@ import { GeneroModule } from 'src/genero/genero.module';
   ],
   controllers: [UsuarioController],
   providers: [UsuarioService],
+  exports: [UsuarioService],
 })
 export class UsuarioModule {}

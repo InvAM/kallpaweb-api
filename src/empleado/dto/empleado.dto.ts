@@ -1,5 +1,5 @@
 export class CreateEmpleadoDto {
-  DNI_Emp: number;
+  DNI_Em: number;
   Nombre_Em: string;
   Apellido_Em: string;
   Celular_Em: string;

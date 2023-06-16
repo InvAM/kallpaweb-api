@@ -10,23 +10,24 @@ import {
   OneToOne,
   PrimaryColumn,
 } from 'typeorm';
+import { Contrato } from 'src/contrato/contrato.entity';
 
-@Entity({ name: 'Usuario' })
+@Entity({ name: 'Cliente' })
 export class Usuario {
   @PrimaryColumn()
-  DNI_Usu: number;
+  DNI_cli: number;
 
   @Column()
-  Nombre_Usu: string;
+  Nombre_cli: string;
 
   @Column()
-  Apellido_usu: string;
+  Apellido_cli: string;
 
   @Column()
-  Celular_Usu: number;
+  Celular_cli: number;
 
   @Column()
-  FechaNacimiento_Usu: Date;
+  FechaNacimiento_cli: Date;
 
   @Column()
   IDGenero: number;
@@ -55,4 +56,7 @@ export class Usuario {
   @OneToOne(() => Domicilio, (domicilio) => domicilio.usuario)
   @JoinColumn({ name: 'IDDomicilio' })
   domicilio: Domicilio;
+
+  @OneToOne(() => Contrato, (contrato) => contrato.usuario)
+  contrato: Contrato;
 }
