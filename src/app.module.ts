@@ -22,9 +22,9 @@ import { EmpleadoModule } from './empleado/empleado.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mssql',
-      host: 'JYF27',
+      host: 'LAPTOP-S2348A7G',
       port: 1433,
-      username: 'JYF27',
+      username: 'CAM',
       password: '7131',
       database: 'Kallpa',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
