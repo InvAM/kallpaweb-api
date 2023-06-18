@@ -6,6 +6,6 @@ export class CreateContratoDto {
     PuntoInstalacion_Con: number;
     IDGabineteCategoria: number;
     IDTipoInst: number;
-    DNI_Usu: number;
+    DNI_cli: number;
     DNI_Em: number;
 }

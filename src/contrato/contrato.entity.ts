@@ -1,8 +1,8 @@
 import { Categoria_Gabinete } from 'src/categoria-gabinete/categoria-gabinete.entity';
+import { Cliente } from 'src/cliente/cliente.entity';
 import { Empleado } from 'src/empleado/empleado.entity';
 import { EtapaContrato } from 'src/etapa-contrato/etapa-contrato.entity';
 import { TipoInstalacion } from 'src/tipo-instalacion/tipo-instalacion.entity';
-import { Usuario } from 'src/usuario/usuario.entity';
 import {
   Column,
   Entity,
@@ -56,9 +56,9 @@ export class Contrato {
   @Column()
   DNI_cli: number;
 
-  @OneToOne(() => Usuario, (usuario) => usuario.contrato)
+  @OneToOne(() => Cliente, (cliente) => cliente.contrato)
   @JoinColumn({ name: 'DNI_cli' })
-  usuario: Usuario;
+  cliente: Cliente;
 
   @Column()
   DNI_Em: number;

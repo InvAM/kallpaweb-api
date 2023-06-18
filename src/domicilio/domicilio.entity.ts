@@ -1,3 +1,4 @@
+import { Cliente } from 'src/cliente/cliente.entity';
 import { Condicion } from 'src/condicion/condicion.entity';
 import { Distrito } from 'src/distrito/distrito.entity';
 import { Estrato } from 'src/estrato/estrato.entity';
@@ -60,6 +61,6 @@ export class Domicilio {
   @JoinColumn({ name: 'IDDistrito' })
   distrito: Distrito;
 
-  @OneToOne(() => Usuario, (usuario) => usuario.domicilio)
-  usuario: Usuario;
+  @OneToOne(() => Cliente, (cliente) => cliente.domicilio)
+  cliente: Cliente;
 }

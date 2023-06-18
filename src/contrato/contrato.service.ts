@@ -4,9 +4,10 @@ import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CategoriaGabineteService } from 'src/categoria-gabinete/categoria-gabinete.service';
 import { TipoInstalacionService } from 'src/tipo-instalacion/tipo-instalacion.service';
-import { UsuarioService } from 'src/usuario/usuario.service';
 import { EmpleadoService } from 'src/empleado/empleado.service';
 import { CreateContratoDto } from './dto/create-contrato.dto';
+import { ClienteService } from 'src/cliente/cliente.service';
+
 
 @Injectable()
 export class ContratoService {
@@ -15,7 +16,7 @@ export class ContratoService {
     private contratoRepository: Repository<Contrato>,
     private categoriagabineteService: CategoriaGabineteService,
     private tipoinstalacionService: TipoInstalacionService,
-    private usuarioService: UsuarioService,
+    private clienteService: ClienteService,
     private empleadoService: EmpleadoService,
   ) {}
 
@@ -28,8 +29,8 @@ export class ContratoService {
       await this.tipoinstalacionService.getTipoInstalacionOne(
         contrato.IDTipoInst,
       );
-    const usuarioFound = await this.usuarioService.getUsuarioOne(
-      contrato.DNI_Usu,
+    const clienteFound = await this.clienteService.getClienteOne(
+      contrato.DNI_cli,
     );
     const empleadoFound = await this.empleadoService.getEmpleadoOne(
       contrato.DNI_Em,
@@ -38,7 +39,7 @@ export class ContratoService {
     if (
       !categoriagabineteFound &&
       !tipoinstalacionFound &&
-      !usuarioFound &&
+      !clienteFound &&
       !empleadoFound
     ) {
       return new HttpException(

@@ -15,7 +15,6 @@ import { CategoriaEmpleadoModule } from './categoria-empleado/categoria-empleado
 import { TipoInstalacionModule } from './tipo-instalacion/tipo-instalacion.module';
 import { MaterialesModule } from './materiales/materiales.module';
 import { DomicilioModule } from './domicilio/domicilio.module';
-import { UsuarioModule } from './usuario/usuario.module';
 import { EmpleadoModule } from './empleado/empleado.module';
 import { ContratoModule } from './contrato/contrato.module';
 import { EtapaContratoModule } from './etapa-contrato/etapa-contrato.module';
@@ -26,10 +25,10 @@ import { CredencialesEmpleadoModule } from './credenciales-empleado/credenciales
   imports: [
     TypeOrmModule.forRoot({
       type: 'mssql',
-      host: 'JYF27',
+      host: 'DESKTOP-G8P3KD4',
       port: 1433,
-      username: 'JYF27',
-      password: '7131',
+      username: 'Sa',
+      password: '12345678',
       database: 'Kallpa',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
@@ -50,7 +49,6 @@ import { CredencialesEmpleadoModule } from './credenciales-empleado/credenciales
     TipoInstalacionModule,
     MaterialesModule,
     DomicilioModule,
-    UsuarioModule,
     EmpleadoModule,
     ContratoModule,
     EtapaContratoModule,

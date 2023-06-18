@@ -13,7 +13,7 @@ import {
 import { Contrato } from 'src/contrato/contrato.entity';
 
 @Entity({ name: 'Cliente' })
-export class Usuario {
+export class Cliente {
   @PrimaryColumn()
   DNI_cli: number;
 
@@ -32,31 +32,31 @@ export class Usuario {
   @Column()
   IDGenero: number;
 
-  @ManyToOne(() => Genero, (genero) => genero.usuario)
+  @ManyToOne(() => Genero, (genero) => genero.cliente)
   @JoinColumn({ name: 'IDGenero' })
   genero: Genero;
 
   @Column()
   IDNacionalidad: number;
 
-  @ManyToOne(() => Nacionalidad, (nacionalidad) => nacionalidad.usuario)
+  @ManyToOne(() => Nacionalidad, (nacionalidad) => nacionalidad.cliente)
   @JoinColumn({ name: 'IDNacionalidad' })
   nacionalidad: Nacionalidad;
 
   @Column()
   IDEstadoCivil: number;
 
-  @ManyToOne(() => EstadoCivil, (estadocivil) => estadocivil.usuario)
+  @ManyToOne(() => EstadoCivil, (estadocivil) => estadocivil.cliente)
   @JoinColumn({ name: 'IDEstadoCivil' })
   estadocivil: EstadoCivil;
 
   @Column()
   IDDomicilio: number;
 
-  @OneToOne(() => Domicilio, (domicilio) => domicilio.usuario)
+  @OneToOne(() => Domicilio, (domicilio) => domicilio.cliente)
   @JoinColumn({ name: 'IDDomicilio' })
   domicilio: Domicilio;
 
-  @OneToOne(() => Contrato, (contrato) => contrato.usuario)
+  @OneToOne(() => Contrato, (contrato) => contrato.cliente)
   contrato: Contrato;
 }
