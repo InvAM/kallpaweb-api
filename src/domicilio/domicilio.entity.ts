@@ -3,7 +3,6 @@ import { Condicion } from 'src/condicion/condicion.entity';
 import { Distrito } from 'src/distrito/distrito.entity';
 import { Estrato } from 'src/estrato/estrato.entity';
 import { TipoPredio } from 'src/tipo-predio/tipo-predio.entity';
-import { Usuario } from 'src/usuario/usuario.entity';
 import {
   Column,
   Entity,
