@@ -8,7 +8,6 @@ import { EmpleadoService } from 'src/empleado/empleado.service';
 import { CreateContratoDto } from './dto/create-contrato.dto';
 import { ClienteService } from 'src/cliente/cliente.service';
 
-
 @Injectable()
 export class ContratoService {
   constructor(
@@ -57,7 +56,7 @@ export class ContratoService {
       relations: [
         'categoriagabinete',
         'tipoinstalacion',
-        'usuario',
+        'cliente',
         'empleado',
       ],
     });
