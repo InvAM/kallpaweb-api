@@ -18,9 +18,6 @@ export class Domicilio {
   IDDomicilio: number;
 
   @Column()
-  Ubicacion_Dom: string;
-
-  @Column()
   Direccion_Dom: string;
 
   @Column()

@@ -31,7 +31,7 @@ export class Contrato {
   PuntoInstalacion_Con: number;
 
   @Column()
-  estado: string;
+  estado: String;
 
   @Column()
   IDGabineteCategoria: number;
