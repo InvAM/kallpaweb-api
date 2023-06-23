@@ -6,7 +6,6 @@ import { EtapaService } from 'src/etapa/etapa.service';
 import { ContratoService } from 'src/contrato/contrato.service';
 import { EmpleadoService } from 'src/empleado/empleado.service';
 import { CreateEtapaContratoDto } from './dto/etapa-contrato.dto';
-import e from 'express';
 
 @Injectable()
 export class EtapaContratoService {

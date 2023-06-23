@@ -5,8 +5,8 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { CategoriaGabineteService } from 'src/categoria-gabinete/categoria-gabinete.service';
 import { TipoInstalacionService } from 'src/tipo-instalacion/tipo-instalacion.service';
 import { EmpleadoService } from 'src/empleado/empleado.service';
-import { CreateContratoDto } from './dto/create-contrato.dto';
 import { ClienteService } from 'src/cliente/cliente.service';
+import { CreateContratoDto } from './dto/create-contrato.dto';
 
 @Injectable()
 export class ContratoService {

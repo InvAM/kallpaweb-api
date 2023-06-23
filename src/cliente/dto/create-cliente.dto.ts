@@ -1,19 +1,19 @@
 export class CreateClienteDto {
-    DNI_cli: number;
+  DNI_cli: number;
 
-    Nombre_cli: string;
+  Nombre_cli: string;
 
-    Apellido_cli: string;
+  Apellido_cli: string;
 
-    Celular_cli: number;
+  Celular_cli: number;
 
-    FechaNacimiento_cli: Date;
+  FechaNacimiento_cli: Date;
 
-    IDGenero: number;
+  IDGenero: number;
 
-    IDNacionalidad: number;
+  IDNacionalidad: number;
 
-    IDEstadoCivil: number;
+  IDEstadoCivil: number;
 
-    IDDomicilio: number;
+  IDDomicilio: number;
 }

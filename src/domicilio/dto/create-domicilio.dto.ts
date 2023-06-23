@@ -1,8 +1,6 @@
 export class CreateDomicilioDto {
   IDDomicilio: number;
 
-  Ubicacion_Dom: string;
-
   Direccion_Dom: string;
 
   Interior_Dom: string;
