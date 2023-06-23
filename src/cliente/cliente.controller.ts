@@ -9,7 +9,6 @@ import {
 } from '@nestjs/common';
 import { ClienteService } from './cliente.service';
 import { CreateClienteDto } from './dto/create-cliente.dto';
-import { updateClienteDto } from './dto/update-cliente.dto';
 import { Cliente } from './cliente.entity';
 @Controller('cliente')
 export class ClienteController {
@@ -33,7 +32,7 @@ export class ClienteController {
   @Patch(':DNI_cli')
   updateCliente(
     @Param('DNI_cli', ParseIntPipe) DNI_cli: number,
-    @Body() cliente: updateClienteDto,
+    @Body() cliente: CreateClienteDto,
   ) {
     return this.clienteService.actualizarCliente(DNI_cli, cliente);
   }

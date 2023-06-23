@@ -7,7 +7,6 @@ import { EstadoCivilService } from 'src/estado-civil/estado-civil.service';
 import { NacionalidadService } from 'src/nacionalidad/nacionalidad.service';
 import { GeneroService } from 'src/genero/genero.service';
 import { CreateClienteDto } from './dto/create-cliente.dto';
-import { updateClienteDto } from './dto/update-cliente.dto';
 
 @Injectable()
 export class ClienteService {
@@ -63,7 +62,7 @@ export class ClienteService {
     });
   }
 
-  actualizarCliente(DNI_cli: number, cliente: updateClienteDto) {
+  actualizarCliente(DNI_cli: number, cliente: CreateClienteDto) {
     this.clienteRepository.update({ DNI_cli }, cliente);
   }
 }
