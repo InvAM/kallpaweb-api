@@ -40,4 +40,7 @@ export class EmpleadoService {
       },
     });
   }
+  actualizarEmpleado(DNI_Em: number, empleado: CreateEmpleadoDto) {
+    this.empleadoRepository.update({ DNI_Em }, empleado);
+  }
 }
