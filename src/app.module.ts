@@ -25,10 +25,10 @@ import { CredencialesEmpleadoModule } from './credenciales-empleado/credenciales
   imports: [
     TypeOrmModule.forRoot({
       type: 'mssql',
-      host: 'JYF27',
+      host: 'DESKTOP-G8P3KD4',
       port: 1433,
-      username: 'JYF27',
-      password: '7131',
+      username: 'Sa',
+      password: '12345678',
       database: 'Kallpa',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
