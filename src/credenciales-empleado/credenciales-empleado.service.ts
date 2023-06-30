@@ -40,4 +40,8 @@ export class CredencialesEmpleadoService {
       },
     });
   }
+
+  deleteCEmpleado(DNI_Em: number) {
+    return this.CredencialesRepository.delete({ DNI_Em });
+  }
 }
