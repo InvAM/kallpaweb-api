@@ -2,6 +2,9 @@ import {
   Body,
   Controller,
   Get,
+  Patch,
+  Param,
+  ParseIntPipe,
   Post,
   Patch,
   ParseIntPipe,
@@ -24,12 +27,6 @@ export class ContratoController {
   getContrato() {
     return this.contratoService.getContrato();
   }
-
-  @Get(':IDContrato')
-  getContratoOne(@Param('IDContrato') IDContrato: number): Promise<Contrato> {
-    return this.contratoService.getContratoOne(IDContrato);
-  }
-
   @Patch(':IDContrato')
   updateContrato(
     @Param('IDContrato', ParseIntPipe) IDContrato: number,

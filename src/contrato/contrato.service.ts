@@ -69,7 +69,6 @@ export class ContratoService {
       },
     });
   }
-
   actualizarContrato(IDContrato: number, contrato: CreateContratoDto) {
     this.contratoRepository.update({ IDContrato }, contrato);
   }
