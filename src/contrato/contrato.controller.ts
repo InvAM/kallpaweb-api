@@ -4,11 +4,8 @@ import {
   Get,
   Patch,
   Param,
-  ParseIntPipe,
   Post,
-  Patch,
   ParseIntPipe,
-  Param,
 } from '@nestjs/common';
 import { ContratoService } from './contrato.service';
 import { CreateContratoDto } from './dto/create-contrato.dto';
