@@ -20,6 +20,7 @@ import { ContratoModule } from './contrato/contrato.module';
 import { EtapaContratoModule } from './etapa-contrato/etapa-contrato.module';
 import { DetalleEtapaMaterialModule } from './detalle-etapa-material/detalle-etapa-material.module';
 import { CredencialesEmpleadoModule } from './credenciales-empleado/credenciales-empleado.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -54,6 +55,7 @@ import { CredencialesEmpleadoModule } from './credenciales-empleado/credenciales
     EtapaContratoModule,
     DetalleEtapaMaterialModule,
     CredencialesEmpleadoModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
