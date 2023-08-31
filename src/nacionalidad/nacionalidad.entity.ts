@@ -1,9 +1,9 @@
 import { Cliente } from 'src/cliente/cliente.entity';
-import { Column, Entity, OneToMany, PrimaryColumn } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ name: 'Nacionalidad' })
 export class Nacionalidad {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
   IDNacionalidad: number;
 
   @Column()
