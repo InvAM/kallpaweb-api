@@ -9,12 +9,12 @@ import {
   JoinColumn,
   ManyToOne,
   OneToOne,
-  PrimaryColumn,
+  PrimaryGeneratedColumn,
 } from 'typeorm';
 
 @Entity({ name: 'Domicilio' })
 export class Domicilio {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
   IDDomicilio: number;
 
   @Column()

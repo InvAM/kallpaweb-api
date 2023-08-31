@@ -1,8 +1,8 @@
-import { Column, Entity, OneToMany, PrimaryColumn } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { Cliente } from 'src/cliente/cliente.entity';
 @Entity({ name: 'EstadoCivil' })
 export class EstadoCivil {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
   IDEstadoCivil: number;
 
   @Column()

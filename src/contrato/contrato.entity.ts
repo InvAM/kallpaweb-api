@@ -10,12 +10,12 @@ import {
   ManyToOne,
   OneToMany,
   OneToOne,
-  PrimaryColumn,
+  PrimaryGeneratedColumn,
 } from 'typeorm';
 
 @Entity({ name: 'Contrato' })
 export class Contrato {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
   IDContrato: number;
 
   @Column()

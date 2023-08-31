@@ -1,10 +1,17 @@
 import { EtapaContrato } from 'src/etapa-contrato/etapa-contrato.entity';
 import { Materiales } from 'src/materiales/materiales.entity';
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  PrimaryColumn,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 @Entity({ name: 'DetalleEtapaMaterial' })
 export class DetalleEtapaMaterial {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
   IDMateriales: number;
 
   @ManyToOne(() => Materiales, (materiales) => materiales.detalleEtapaMaterial)

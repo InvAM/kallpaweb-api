@@ -9,5 +9,6 @@ import { EmpleadoModule } from 'src/empleado/empleado.module';
   imports: [TypeOrmModule.forFeature([CredencialesEmpleado]), EmpleadoModule],
   controllers: [CredencialesEmpleadoController],
   providers: [CredencialesEmpleadoService],
+  exports: [CredencialesEmpleadoService],
 })
 export class CredencialesEmpleadoModule {}

@@ -1,15 +1,8 @@
-import {
-  BadRequestException,
-  Body,
-  Controller,
-  Get,
-  Post,
-  ValidationError,
-  ValidationPipe,
-} from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { CredencialesEmpleadoService } from './credenciales-empleado.service';
 import { CreateCredencialesEmpleadoDto } from './dto/credenciales-empleado.dto';
-import { validate } from 'class-validator';
+import { CredencialesEmpleado } from './credenciales-empleado.entity';
+
 @Controller('credenciales-empleado')
 export class CredencialesEmpleadoController {
   constructor(
@@ -30,31 +23,29 @@ export class CredencialesEmpleadoController {
     return this.credencialesEmpleadoService.getCredencialesEmpleado();
   }
 
-  @Post('validar')
-  async validarEmpleado(
-    @Body(new ValidationPipe())
-    credencialesEmpleadoDto: CreateCredencialesEmpleadoDto,
-  ) {
-    const errors = await validate(credencialesEmpleadoDto);
-    if (errors.length > 0) {
-      throw new BadRequestException({
-        errors: this.formatValidationErrors(errors),
-      });
-    }
+  // @Post('validar')
+  // async validarEmpleado(
+  //   @Body(new ValidationPipe())
+  //   credencialesEmpleadoDto: CreateCredencialesEmpleadoDto,
+  // ) {
+  //   const errors = await validate(credencialesEmpleadoDto);
+  //   if (errors.length > 0) {
+  //     throw new BadRequestException({
+  //       errors: this.formatValidationErrors(errors),
+  //     });
+  //   }
 
-    return this.credencialesEmpleadoService.validarEmpleado(
-      credencialesEmpleadoDto.DNI_Em,
-      credencialesEmpleadoDto.nombreusuario,
-      credencialesEmpleadoDto.contraseña,
-    );
-  }
+  //   return this.credencialesEmpleadoService.validarEmpleado(
+  //     credencialesEmpleadoDto.DNI_Em,
+  //     credencialesEmpleadoDto.nombreusuario,
+  //     credencialesEmpleadoDto.contraseña,
+  //   );
+  // }
 
-  private formatValidationErrors(errors: ValidationError[]) {
-    return errors.reduce((formattedErrors, error) => {
-      Object.entries(error.constraints).forEach(([constraint, message]) => {
-        formattedErrors[error.property] = message;
-      });
-      return formattedErrors;
-    }, {});
+  @Get('nombreusuario/:nombreusuario')
+  getCredencialesBy(
+    @Param('nombreusuario') nombreusuario: string,
+  ): Promise<CredencialesEmpleado> {
+    return this.credencialesEmpleadoService.findOneByUsuario(nombreusuario);
   }
 }

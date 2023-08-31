@@ -1,9 +1,9 @@
 import { EtapaContrato } from 'src/etapa-contrato/etapa-contrato.entity';
-import { Column, Entity, OneToMany, PrimaryColumn } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ name: 'Etapa' })
 export class Etapa {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
   IDEtapa: number;
 
   @Column()
