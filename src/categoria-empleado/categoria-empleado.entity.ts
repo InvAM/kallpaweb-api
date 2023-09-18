@@ -1,3 +1,4 @@
+import { CredencialesEmpleado } from 'src/credenciales-empleado/credenciales-empleado.entity';
 import { Empleado } from 'src/empleado/empleado.entity';
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
@@ -11,4 +12,10 @@ export class CategoriaEmpleado {
 
   @OneToMany(() => Empleado, (empleado) => empleado.categoriaempleado)
   empleado: Empleado[];
+
+  @OneToMany(
+    () => CredencialesEmpleado,
+    (credenciales) => credenciales.categoriae,
+  )
+  credenciales: CredencialesEmpleado[];
 }

@@ -14,4 +14,7 @@ export class registerDto {
   @IsString()
   @MinLength(1)
   contraseña: string;
+
+  @IsNumber()
+  IDCategoria: number;
 }

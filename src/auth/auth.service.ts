@@ -5,7 +5,6 @@ import {
 } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { CredencialesEmpleadoService } from 'src/credenciales-empleado/credenciales-empleado.service';
-import { CreateCredencialesEmpleadoDto } from 'src/credenciales-empleado/dto/credenciales-empleado.dto';
 import * as bcryptjs from 'bcryptjs';
 import { loginDto } from './dto/login.dto';
 import { registerDto } from './dto/register.dto';
@@ -17,7 +16,12 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
 
-  async register({ DNI_Em, nombreusuario, contraseña }: registerDto) {
+  async register({
+    DNI_Em,
+    nombreusuario,
+    contraseña,
+    IDCategoria,
+  }: registerDto) {
     const credenciales = await this.credencialesService.findOneByUsuario(
       nombreusuario,
     );
@@ -30,6 +34,7 @@ export class AuthService {
       DNI_Em,
       nombreusuario,
       contraseña: await bcryptjs.hash(contraseña, 10),
+      IDCategoria,
     });
   }
 
