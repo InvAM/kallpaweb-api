@@ -12,10 +12,4 @@ export class CategoriaEmpleado {
 
   @OneToMany(() => Empleado, (empleado) => empleado.categoriaempleado)
   empleado: Empleado[];
-
-  @OneToMany(
-    () => CredencialesEmpleado,
-    (credenciales) => credenciales.categoriae,
-  )
-  credenciales: CredencialesEmpleado[];
 }

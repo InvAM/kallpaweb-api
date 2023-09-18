@@ -23,14 +23,4 @@ export class CredencialesEmpleado {
 
   @Column()
   contraseña: string;
-
-  @Column()
-  IDCategoria: number;
-
-  @ManyToOne(
-    () => CategoriaEmpleado,
-    (categoriaEmpleado) => categoriaEmpleado.credenciales,
-  )
-  @JoinColumn({ name: 'IDCategoria' })
-  categoriae: CategoriaEmpleado;
 }

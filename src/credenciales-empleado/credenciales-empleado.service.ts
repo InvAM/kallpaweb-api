@@ -31,15 +31,15 @@ export class CredencialesEmpleadoService {
     return this.CredencialesRepository.find({ relations: ['empleado'] });
   }
 
-  // validarEmpleado(DNI_Em: number, nombreusuario: string, contraseña: string) {
-  //   return this.CredencialesRepository.findOneOrFail({
-  //     where: {
-  //       DNI_Em: DNI_Em,
-  //       nombreusuario: nombreusuario,
-  //       contraseña: contraseña,
-  //     },
-  //   });
-  // }
+  validarEmpleado(DNI_Em: number, nombreusuario: string, contraseña: string) {
+    return this.CredencialesRepository.findOneOrFail({
+      where: {
+        DNI_Em: DNI_Em,
+        nombreusuario: nombreusuario,
+        contraseña: contraseña,
+      },
+    });
+  }
 
   deleteCEmpleado(DNI_Em: number) {
     return this.CredencialesRepository.delete({ DNI_Em });
