@@ -20,6 +20,8 @@ import { ContratoModule } from './contrato/contrato.module';
 import { EtapaContratoModule } from './etapa-contrato/etapa-contrato.module';
 import { DetalleEtapaMaterialModule } from './detalle-etapa-material/detalle-etapa-material.module';
 import { CredencialesEmpleadoModule } from './credenciales-empleado/credenciales-empleado.module';
+import { TipoMarcacionModule } from './tipo-marcacion/tipo-marcacion.module';
+import { MarcacionModule } from './marcacion/marcacion.module';
 
 @Module({
   imports: [
@@ -34,6 +36,7 @@ import { CredencialesEmpleadoModule } from './credenciales-empleado/credenciales
       synchronize: true,
       extra: {
         trustServerCertificate: true,
+        instanceName: 'SQL2022',
       },
     }),
     GeneroModule,
@@ -54,6 +57,8 @@ import { CredencialesEmpleadoModule } from './credenciales-empleado/credenciales
     EtapaContratoModule,
     DetalleEtapaMaterialModule,
     CredencialesEmpleadoModule,
+    TipoMarcacionModule,
+    MarcacionModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -2,6 +2,7 @@ import { CategoriaEmpleado } from 'src/categoria-empleado/categoria-empleado.ent
 import { Contrato } from 'src/contrato/contrato.entity';
 import { CredencialesEmpleado } from 'src/credenciales-empleado/credenciales-empleado.entity';
 import { EtapaContrato } from 'src/etapa-contrato/etapa-contrato.entity';
+import { Marcacion } from 'src/marcacion/marcacion.entity';
 import {
   Column,
   Entity,
@@ -47,4 +48,7 @@ export class Empleado {
     (credencialesempleado) => credencialesempleado.empleado,
   )
   credencialesempleado: CredencialesEmpleado;
+
+  @OneToMany(()=>Marcacion, (marcacion)=> marcacion.empleado)
+  marcacion: Marcacion[];
 }
