@@ -15,6 +15,13 @@ import { CategoriaEmpleadoModule } from './categoria-empleado/categoria-empleado
 import { TipoInstalacionModule } from './tipo-instalacion/tipo-instalacion.module';
 import { MaterialesModule } from './materiales/materiales.module';
 import { DomicilioModule } from './domicilio/domicilio.module';
+import { EmpleadoModule } from './empleado/empleado.module';
+import { ContratoModule } from './contrato/contrato.module';
+import { EtapaContratoModule } from './etapa-contrato/etapa-contrato.module';
+import { DetalleEtapaMaterialModule } from './detalle-etapa-material/detalle-etapa-material.module';
+import { CredencialesEmpleadoModule } from './credenciales-empleado/credenciales-empleado.module';
+import { TipoMarcacionModule } from './tipo-marcacion/tipo-marcacion.module';
+import { MarcacionModule } from './marcacion/marcacion.module';
 
 @Module({
   imports: [
@@ -29,6 +36,7 @@ import { DomicilioModule } from './domicilio/domicilio.module';
       synchronize: true,
       extra: {
         trustServerCertificate: true,
+        instanceName: 'SQL2022',
       },
     }),
     GeneroModule,
@@ -44,6 +52,13 @@ import { DomicilioModule } from './domicilio/domicilio.module';
     TipoInstalacionModule,
     MaterialesModule,
     DomicilioModule,
+    EmpleadoModule,
+    ContratoModule,
+    EtapaContratoModule,
+    DetalleEtapaMaterialModule,
+    CredencialesEmpleadoModule,
+    TipoMarcacionModule,
+    MarcacionModule,
   ],
   controllers: [AppController],
   providers: [AppService],

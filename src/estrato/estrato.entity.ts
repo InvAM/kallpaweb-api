@@ -1,9 +1,9 @@
 import { Domicilio } from 'src/domicilio/domicilio.entity';
-import { Column, Entity, OneToMany, PrimaryColumn } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ name: 'Estrato' })
 export class Estrato {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
   IDEstrato: number;
 
   @Column()

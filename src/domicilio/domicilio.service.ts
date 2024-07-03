@@ -53,6 +53,13 @@ export class DomicilioService {
     return this.domicilioRepository.find({
       relations: ['condicion', 'estrato', 'tipopredio', 'distrito'],
     });
-    //Todo ese fragmento va dentro de find (aun en prueba)
+  }
+
+  getDomicilioOne(IDDomicilio: number) {
+    return this.domicilioRepository.findOne({
+      where: {
+        IDDomicilio: IDDomicilio,
+      },
+    });
   }
 }

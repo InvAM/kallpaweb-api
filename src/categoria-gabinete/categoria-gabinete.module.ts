@@ -8,5 +8,6 @@ import { Categoria_Gabinete } from './categoria-gabinete.entity';
   imports: [TypeOrmModule.forFeature([Categoria_Gabinete])],
   controllers: [CategoriaGabineteController],
   providers: [CategoriaGabineteService],
+  exports: [CategoriaGabineteService],
 })
 export class CategoriaGabineteModule {}

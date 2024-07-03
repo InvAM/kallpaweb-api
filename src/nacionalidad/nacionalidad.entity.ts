@@ -1,14 +1,14 @@
-// import { Usuario } from 'src/usuario/usuario.entity';
-import { Column, Entity, OneToMany, PrimaryColumn } from 'typeorm';
+import { Cliente } from 'src/cliente/cliente.entity';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ name: 'Nacionalidad' })
 export class Nacionalidad {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
   IDNacionalidad: number;
 
   @Column()
   Descripcion_NA: string;
 
-  // @OneToMany(() => Usuario, (Usuario) => Usuario.nacionalidad)
-  // usuario: [Usuario];
+  @OneToMany(() => Cliente, (Cliente) => Cliente.nacionalidad)
+  cliente: Cliente[];
 }

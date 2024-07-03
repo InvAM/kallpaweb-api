@@ -8,5 +8,6 @@ import { TipoInstalacion } from './tipo-instalacion.entity';
   imports: [TypeOrmModule.forFeature([TipoInstalacion])],
   controllers: [TipoInstalacionController],
   providers: [TipoInstalacionService],
+  exports: [TipoInstalacionService],
 })
 export class TipoInstalacionModule {}

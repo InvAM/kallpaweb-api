@@ -1,16 +1,21 @@
+import { Cliente } from 'src/cliente/cliente.entity';
 import { Condicion } from 'src/condicion/condicion.entity';
 import { Distrito } from 'src/distrito/distrito.entity';
 import { Estrato } from 'src/estrato/estrato.entity';
 import { TipoPredio } from 'src/tipo-predio/tipo-predio.entity';
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  OneToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 @Entity({ name: 'Domicilio' })
 export class Domicilio {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
   IDDomicilio: number;
-
-  @Column()
-  Ubicacion_Dom: string;
 
   @Column()
   Direccion_Dom: string;
@@ -51,4 +56,7 @@ export class Domicilio {
   @ManyToOne(() => Distrito, (distrito) => distrito.domicilio)
   @JoinColumn({ name: 'IDDistrito' })
   distrito: Distrito;
+
+  @OneToOne(() => Cliente, (cliente) => cliente.domicilio)
+  cliente: Cliente;
 }
